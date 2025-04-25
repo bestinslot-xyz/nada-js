@@ -1,0 +1,29 @@
+{
+  "name": "nada",
+  "version": "1.0.0",
+  "description": "Compression-focused encoding for zero-heavy solidity calldata and bytecode",
+  "main": "index.js",
+  "scripts": {
+    "test": "uvu -r tsx test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bestinslot-xyz/nada-js.git"
+  },
+  "keywords": [
+    "solidity",
+    "calldata",
+    "encoding"
+  ],
+  "author": "Best in Slot",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bestinslot-xyz/nada-js/issues"
+  },
+  "homepage": "https://github.com/bestinslot-xyz/nada-js#readme",
+  "devDependencies": {
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "uvu": "^0.5.6"
+  }
+}
