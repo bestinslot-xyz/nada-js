@@ -1,10 +1,12 @@
 {
-  "name": "nada",
-  "version": "1.0.0",
+  "name": "@bestinslot/nada",
+  "version": "0.1.2",
   "description": "Compression-focused encoding for zero-heavy solidity calldata and bytecode",
-  "main": "index.js",
+  "main": "dist/src/nada.js",
   "scripts": {
-    "test": "uvu -r tsx test"
+    "test": "uvu -r tsx test",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,11 @@
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
     "uvu": "^0.5.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@bestinslot/nada": "^0.1.2"
   }
 }
