@@ -52,6 +52,10 @@ export function encode(input: Uint8Array): Uint8Array {
 }
 
 export function decode(input: Uint8Array): Uint8Array {
+    return decode_with_limit(input, Number.MAX_SAFE_INTEGER);
+}
+
+export function decode_with_limit(input: Uint8Array, limit: number): Uint8Array {
     const output: number[] = [];
 
     for (let i = 0; i < input.length; i++) {
@@ -59,8 +63,12 @@ export function decode(input: Uint8Array): Uint8Array {
 
         if (byte === 0xFF) {
             const next = input[++i];
-            if (next === 0x00 || next === undefined) {
-                throw new Error('invalid nada sequence: 0xFF 0x00 or unexpected end');
+            if (next === 0x00) {
+                throw new Error('invalid nada sequence: 0xFF 0x00');
+            }
+
+            if (next === undefined) {
+                throw new Error('unexpected end of input');
             }
 
             if (next === 0x01) {
@@ -76,6 +84,10 @@ export function decode(input: Uint8Array): Uint8Array {
             }
         } else {
             output.push(byte);
+        }
+
+        if (output.length > limit) {
+            throw new Error(`output length exceeded limit: ${limit}`);
         }
     }
 
