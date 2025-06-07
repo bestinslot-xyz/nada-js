@@ -31,8 +31,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@bestinslot/nada": "^0.1.2"
   }
 }
