@@ -1,6 +1,6 @@
 {
   "name": "@bestinslot/nada",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Compression-focused encoding for zero-heavy solidity calldata and bytecode",
   "main": "dist/src/nada.js",
   "types": "dist/types/src/nada.d.ts",
